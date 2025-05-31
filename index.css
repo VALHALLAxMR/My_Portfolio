@@ -1,0 +1,457 @@
+/* ======= GLOBAL STYLES ======= */
+:root {
+  --main-color: #00c6ff;
+  --contrast-color: #ffb300;
+  --dark-bg: #3c3d92;
+  --card-bg: rgba(40, 45, 60, 0.65);
+  --nav-bg: rgba(24, 24, 32, 0.82);
+  --accent-color: #00c6ff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin:0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(360deg, var(--dark-bg) 0%, #23245d 50%, #000000 100%);
+  color: #ffffff;
+  overflow-x: hidden;
+  position:relative;
+  height:100%;
+  width:100%;
+}
+.main
+{
+  display:flex;
+  flex-direction: column;
+}
+.navbar
+{
+  display:flex;
+  position:sticky;
+  top:0;
+  width:100%;
+  background: rgba(40,40,40,0.4);
+  height:5vh;
+  z-index: 10;
+  border-bottom: 1px solid #4b4949;
+  backdrop-filter: blur(8px);
+  justify-content:center;
+  align-items: center;
+  flex-direction: row;
+  padding:1rem;
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.navbar a
+{
+  font-weight:bold;
+  font-size:1.1rem;
+  transition: 0.2s;
+}
+.logo
+{
+  padding-left:12px;
+  margin-right: auto;
+}
+
+.navbar ul
+{
+  display: flex;
+  justify-content: flex-start;
+  margin-left:auto;
+  gap: 2rem;
+  list-style: none;
+}
+a
+{
+  text-decoration:none;
+  color:rgb(207, 168, 119);
+}
+li:hover
+{
+  transform: scale(1.1);
+}
+.navbar a:hover
+{
+  color: var(--main-color);
+}
+
+
+#hero
+{
+  height:50rem;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items:center;
+}
+#hero h1 
+{
+  font-family:"Poetsen One", sans-serif;
+  font-weight: 900;
+  font-style:oblique;
+  font-size:60px;
+}
+#hero h2 
+{
+  font-family:"Poetsen One", sans-serif;
+  font-weight: 900;
+  font-style:oblique;
+  font-size:60px;
+}
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 0 2rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.innerContainer
+{
+  display:flex;
+  
+}
+.innerContainer img
+{
+  border-radius: 24px;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items:flex-start;
+}
+
+.mission, .prashant {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero .container,
+.showcard,
+.projectCard,
+.experienceCard {
+  display: inline-block;
+  text-align: center;
+  background: var(--card-bg);
+  border-radius: 24px;
+  box-shadow: 0 8px 40px 0 rgba(0,0,0,0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 3rem 2rem;
+  border: 1.5px solid rgba(255,255,255,0.08);
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.hero .container:hover,
+.showcard:hover,
+.projectCard:hover,
+.experienceCard:hover {
+  transform: scale(1.04);
+  box-shadow: 0 16px 48px 0 rgba(0,0,0,0.22), 0 3px 16px 0 rgba(0,0,0,0.16);
+  background: var(--card-bg);
+}
+.showcardLayer
+{
+  display:flex;
+  width:100%;
+  align-items: center;
+  justify-content: center;
+}
+.showcard
+{
+  width:50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+.projects h2, .experience h2, .skills h2{
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+.projectList, .experienceList {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.projectCard 
+{
+  flex: 0 0 auto;
+  margin-bottom: 0;
+  margin-top: 0;
+  min-width: 0;
+  max-width: 100%;
+  width: auto;
+  display: inline-block;
+  color: var(--contrast-color);
+}
+
+.experienceList 
+{
+ width:100%;
+}
+.experienceCard 
+{
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 320px;
+  margin-bottom: 0;
+  margin-top: 0;
+  display: inline-block;
+  color: var(--contrast-color);
+  text-align: center;
+}
+.footer {
+  background: var(--nav-bg);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 1.5rem 0;
+  color: #b0bec5;
+  margin-top: 2rem;
+}
+
+.projectCard img, .experienceCard img {
+    width: 120 px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+    transition: box-shadow 0.3s, filter 0.3s;
+  }
+  .projectCard img:hover, .experienceCard img:hover {
+    box-shadow: 0 8px 32px 0 var(--main-color, #00c6ff), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+    filter: brightness(1.15) saturate(1.2);
+  }
+
+   @media (max-width: 900px) {
+    .projectList, .experienceList {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    .experienceCard, .projectCard {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .skillsList {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .skillCard {
+    flex: 1 1 220px;
+    min-width: 220px;
+    max-width: 320px;
+    margin-bottom: 0;
+    margin-top: 0;
+    display: inline-block;
+    color: var(--contrast-color);
+    text-align: center;
+    background: var(--card-bg);
+    border-radius: 24px;
+    box-shadow: 0 8px 40px 0 rgba(0,0,0,0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 2rem 1rem;
+    border: 1.5px solid rgba(255,255,255,0.08);
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  .skillCard:hover {
+    transform: scale(1.04);
+    box-shadow: 0 16px 48px 0 rgba(0,0,0,0.22), 0 3px 16px 0 rgba(0,0,0,0.16);
+    background: var(--card-bg);
+  }
+  .skillCard img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+    transition: box-shadow 0.3s, filter 0.3s;
+  }
+  .skillCard img:hover {
+    box-shadow: 0 8px 32px 0 var(--main-color, #00c6ff), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+    filter: brightness(1.15) saturate(1.2);
+  }
+@media (max-width: 900px) 
+  {
+    .skillsList {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    .skillCard {
+      width: 100%;
+      display: block;
+    }
+  }
+
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    min-width: 220px;
+    max-width: 100vw;
+    padding: 0.5rem 0.5rem;
+    align-items: flex-start;
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .webpage {
+    width: 100%;
+  }
+}
+
+
+
+
+.showcardLayer {
+  min-width: 260px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.showcard {
+  min-width: 220px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.innerContainer {
+  min-width: 220px;
+  max-width: 600px;
+  gap: 2rem;
+}
+.profile-pic {
+  min-width: 80px;
+  max-width: 160px;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 900px) {
+  .showcardLayer, .showcard, .innerContainer {
+    max-width: 98vw;
+  }
+  .innerContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    min-width: 220px;
+    max-width: 100vw;
+    padding: 0.5rem 0.5rem;
+    align-items: flex-start;
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .webpage 
+  {
+    width: 100%;
+  }
+}
+
+
+.showcardLayer 
+{
+  min-width: 260px;
+  max-width: 100%;
+  
+}
+.showcard 
+{
+  min-width: 220px;
+  max-width: 100%;
+}
+.innerContainer 
+{
+  min-width: 220px;
+  max-width: 100% ;
+  gap: 2rem;
+}
+.profile-pic {
+  min-width: 80px;
+  max-width: 160px;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 900px) {
+  .showcardLayer, .showcard, .innerContainer {
+    max-width: 100%;
+  }
+  .innerContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .showcardLayer, .showcard, .innerContainer {
+    min-width: 120px;
+    max-width: 100vw;
+  }
+  .profile-pic {
+    min-width: 60px;
+    max-width: 100px;
+  }
+}
+  
+  
+
